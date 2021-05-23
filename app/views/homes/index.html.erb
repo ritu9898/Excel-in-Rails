@@ -1,0 +1,21 @@
+
+<%= link_to 'Add new', new_home_path %>
+
+<div class="">
+    <div class="row">
+        <h3 class="col-md-3 item1"> Index </h3>
+        <h3 class="col-md-3 item1"> Hospital Name </h3>
+        <h3 class="col-md-3 item1"> Oxygen Cans </h3>
+        <h3 class="col-md-3 item1"> No. of Beds </h3>
+    </div>
+
+
+    <% @hospital_data.each do |data| %>
+        <div class="row">
+            <p class="col-md-3 item1"> 1 </p>
+            <p class="col-md-3 item1"><%=  data.name %> </p>
+            <p class="col-md-3 item1"><%= data.oxygen_can %> </p>
+            <p class="col-md-3 item1"><%= data.bed %> </p>
+        </div>
+    <% end %>
+</div>

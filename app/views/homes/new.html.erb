@@ -1,0 +1,31 @@
+<div class="container">
+		<%= form_tag(bulk_add_data_homes_path,  multipart: true, class: 'btn btn-primary btn-sm pull-right custom-export-button') do %>
+			<%#= file_field :files, name: 'attachment[file]', id: 'file-input'%>
+			<%= file_field_tag 'xml_file' %>
+			<%= submit_tag 'OK', class: 'btn btn-secondary' %>
+		<% end %>
+</div>
+
+<%= form_for @hospital_data, url: homes_path, method: :post do |f| %>
+	<div class="container">
+		<div class="row">
+			<%= f.label :name,'Hospital Name', class: 'col-md-3'%>
+			<%= f.text_field :name, class: 'col-md-3' %>
+		</div>
+
+		<div class="row">
+			<%= f.label :name,'Oxygen Concentrators', class: 'col-md-3'%>
+			<%= f.text_field :oxygen_can, class: 'col-md-3' %>
+		</div>
+
+		<div class="row">
+			<%= f.label :name,'Beds', class: 'col-md-3'%>
+			<%= f.text_field :bed, class: 'col-md-3' %>
+		</div>
+		
+		<div class="row">
+			<%= f.submit 'Add Data', class: 'btn btn-primary col-sm-2' %>
+			<%= link_to 'Back', homes_path, class: 'btn btn-primary col-sm-2' %>
+		</div>
+	</div>
+<% end %>
